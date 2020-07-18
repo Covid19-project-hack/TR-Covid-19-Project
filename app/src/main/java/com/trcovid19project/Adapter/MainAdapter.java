@@ -12,10 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.trcovid19project.HealthCareActivity;
 import com.trcovid19project.MedicalStoresActivity;
 import com.trcovid19project.OrphanageSupport.FreeFoodActivity;
-import com.trcovid19project.TollNumbersActivity;
 import com.bumptech.glide.Glide;
 
 import com.trcovid19project.CoronaActivity;
@@ -29,7 +27,6 @@ import com.trcovid19project.OnlineEducationActivity;
 import com.trcovid19project.OrphanageSupportActivity;
 import com.trcovid19project.R;
 import com.trcovid19project.TestLabsActivity;
-import com.trcovid19project.TweetsActivity;
 import com.trcovid19project.VolunteersActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -91,8 +88,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ImageViewHolde
                                 break;
 
                             case 2:
-                                Intent tollnumbersintent = new Intent(mContext, TollNumbersActivity.class);
-                                tollnumbersintent.putExtra("url", jsons.getToll_numbers());
+                                Intent tollnumbersintent = new Intent(Intent.ACTION_VIEW);
+                                tollnumbersintent.setData(Uri.parse(jsons.getToll_numbers()));
                                 mContext.startActivity(tollnumbersintent);
                                 break;
 
@@ -102,7 +99,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ImageViewHolde
                                 break;
 
                             case 4:
-                                Intent healthcareintent = new Intent(mContext, HealthCareActivity.class);
+                                Intent healthcareintent = new Intent(Intent.ACTION_VIEW);
+                                healthcareintent.setData(Uri.parse(jsons.getHealth_care()));
                                 mContext.startActivity(healthcareintent);
                                 break;
 
@@ -171,8 +169,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ImageViewHolde
                                 break;
 
                             case 17:
-                                Intent tweetintent = new Intent(mContext, TweetsActivity.class);
-                                tweetintent.putExtra("url", jsons.getTweets());
+                                Intent tweetintent = new Intent(Intent.ACTION_VIEW);
+                                tweetintent.setData(Uri.parse(jsons.getTweets()));
                                 mContext.startActivity(tweetintent);
                                 break;
                             case 18:

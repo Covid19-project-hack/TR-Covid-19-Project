@@ -25,13 +25,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.mzcovid19project.Adapter.GridAdapter;
-import com.mzcovid19project.Adapter.MainAdapter;
-import com.mzcovid19project.Login.LoginActivity;
-import com.mzcovid19project.Login.ProfileActivity;
-import com.mzcovid19project.Models.Jsons;
-import com.mzcovid19project.Models.Users;
-import com.mzcovid19project.OrphanageSupport.FreeFoodActivity;
+import com.trcovid19project.Adapter.GridAdapter;
+import com.trcovid19project.Adapter.MainAdapter;
+import com.trcovid19project.Login.LoginActivity;
+import com.trcovid19project.Login.ProfileActivity;
+import com.trcovid19project.Models.Jsons;
+import com.trcovid19project.Models.Users;
+import com.trcovid19project.OrphanageSupport.FreeFoodActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -224,14 +224,14 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONObject jsonObject = response.getJSONObject("MZ").getJSONObject("total");
+                            JSONObject jsonObject = response.getJSONObject("TR").getJSONObject("total");
                             String confirmed = jsonObject.getString("confirmed");
-//                            String deceased = jsonObject.getString("deceased");
+                            String deceased = jsonObject.getString("deceased");
                             String tested = jsonObject.getString("tested");
                             String recovered = jsonObject.getString("recovered");
 
                             Confirmed.setText(confirmed);
-//                            Deceased.setText(deceased);
+                            Deceased.setText(deceased);
                             Tested.setText(tested);
                             Recovered.setText(recovered);
 

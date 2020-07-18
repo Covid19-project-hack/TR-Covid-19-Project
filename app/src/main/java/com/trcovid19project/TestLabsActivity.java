@@ -74,7 +74,7 @@ public class TestLabsActivity extends AppCompatActivity {
     }
 
     private void parseJSON(String url1) {
-        JsonObjectRequest request = new JsonObjectRequest("https://firebasestorage.googleapis.com/v0/b/mz-covid-19-project.appspot.com/o/test_labs.json?alt=media&token=7a77d9fa-1356-4877-a0e7-83ace8a0f3fe", null,
+        JsonObjectRequest request = new JsonObjectRequest("https://firebasestorage.googleapis.com/v0/b/tr-covid-19-project.appspot.com/o/test_labs.json?alt=media&token=4241caef-9602-440d-b86a-856877eccccc", null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
